@@ -1,35 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Validator;
 use DB;
 use Illuminate\Http\Request;
 
-class Contactform extends Controller
+
+use Illuminate\Database\Eloquent\Model;
+
+class Contactform extends Model
 {
+    protected $fillable = ['name', 'email', 'subject', 'message'];
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public static function create()
-    {
-        $controller = new \App\Http\Controllers\Contactform();
-        $controller->create();
-
-// Insert:
-    Contactform::create([
-    'name' => 'Jane Doe',
-    'email' => 'jane@example.com',
-    'subject' => 'NLSA',
-    'message' => 'I was',
-]);
     }
 
     /**
@@ -53,12 +41,21 @@ class Contactform extends Controller
         //input is a variable which has all the contact form values.
         $input = $request->all();
 
+        $contactform = new Contactform();
+        $contactform->name = $input['name'];
+        $contactform->email = $input['email'];
+        $contactform->subject = $input['subject'];
+        $contactform->message = $input['message'];
+        $contactform->save();
         $contactform = Contactform::create($input);
 
+        return response()->json(['message' => 'Contact form info submitted successfully!'], 200);
         return Response([
             'success' => 1, 
             'data' => $contactform,
         ]);
+
+    // return response()->json(['success' => 'Contact form submitted successfully!']);
     }
 
     /**
@@ -78,9 +75,9 @@ class Contactform extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified contact form resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function updateContactForm(Request $request, string $id)
     {
         //
     }
@@ -88,8 +85,8 @@ class Contactform extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public static function destroy($ids)
     {
-        //
+        return parent::destroy($ids);
     }
 }
