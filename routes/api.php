@@ -7,17 +7,7 @@ use App\Http\Controllers\Contactform;
 //     return $request->user();
 // })->middleware('auth:sanctum');
 
-// Route::get('create_contactform', [Contactform::class,'store']);
-// Route::resource('contactform', Contactform::class); 
-
-Route::post('/contactinfo', function (){
-    Contactform::create([
-        'name' => 'Test User',
-        'email' => 'test@gmail.com',
-        'subject' => 'I wanna hire you',
-        'message' => 'Aha!',
-    ]);
-    return 'Contact added';
+Route::post('contactform/add', [Contactform::class, 'store']);
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
 });
-
-// Route::post('create_contactform', 'Contactform@getdata');
