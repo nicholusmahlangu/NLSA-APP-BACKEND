@@ -49,10 +49,10 @@ class Contactform extends Model
         $contactform->save();
         $contactform = Contactform::create($input);
 
-        return response()->json(['message' => 'Contact form info submitted successfully!'], 200);
-        return Response([
-            'success' => 1, 
-            'data' => $contactform,
+        //return Response()->json(['message' => 'Contact form info submitted successfully!'], 200);
+         return Response([
+             'success' => 1, 
+             'data' => $contactform,
         ]);
 
     // return response()->json(['success' => 'Contact form submitted successfully!']);
