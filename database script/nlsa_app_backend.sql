@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 29, 2025 at 08:32 AM
+-- Generation Time: Jul 29, 2025 at 09:15 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -52,7 +52,7 @@ CREATE TABLE `cache_locks` (
 --
 
 CREATE TABLE `contactforms` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `id` bigint(10) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `subject` varchar(255) NOT NULL,
@@ -60,6 +60,15 @@ CREATE TABLE `contactforms` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `contactforms`
+--
+
+INSERT INTO `contactforms` (`id`, `name`, `email`, `subject`, `message`, `created_at`, `updated_at`) VALUES
+(1, 'testing1', 'testing1@gmail.com', 'testing1', 'testing1', '2025-07-29 05:14:33', '2025-07-29 05:14:33'),
+(2, 'testing2', 'testing2@gmail.com', 'testing2', 'testing2', '2025-07-29 05:15:10', '2025-07-29 05:15:10'),
+(3, 'testing3', 'testing3@gmail.com', 'testing3', 'testing3', '2025-07-29 05:15:36', '2025-07-29 05:15:36');
 
 -- --------------------------------------------------------
 
@@ -218,8 +227,10 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 ('3IipZtjl2LFdtriWtOhErre10Vy1LZ6aaNdggWvE', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOFluWDZsTDZpZ3V0azVOTnlaRmJXanZ3VncybDV3S0k4aEhETlo0MSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9uZXdzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1753429888),
 ('6Fe2B27ArkAbHKrpAvDowgSULn1O1SwBdwD1yUG2', NULL, '127.0.0.1', 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1 Edg/138.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidzB0WGNZRUZGRkV4bUZUSUtvVmNsSER4Zk9WTFlUaFgydTdRQUtwUiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9uZXdzLzIiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1753433647),
 ('7Oobq2MQn7v24wR7d5YZwH8a8RnA6AieUhH3XFzZ', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoib291NHV0dW5RWU10OUNFcUpTeVVKTDhqdGtBaVpLVVowdUNOb1Z6TSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9uZXdzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1753429602),
+('80LXKIA9C2aeyyY0NEuMnjvZOBev8eUdNUYROEwa', NULL, '127.0.0.1', 'Mozilla/5.0 (Linux; Android 11; SAMSUNG SM-G973U) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/14.2 Chrome/87.0.4280.141 Mobile Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiekZyQUl4MkpwMHRGRG9Nd2toVE9SaHc2eUhYUkRWZWRZV0RKeUN4MiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9uZXdzLzQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1753773214),
 ('8CmH9brnutpxxVuYMg1GTLConrJp0uSqbOxWCltf', NULL, '127.0.0.1', 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1 Edg/138.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidzRxdDBwMzE2VU80OTBBeVlvRHQxTzdtQjA5WU5RbGI0bzNsd2FkeSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9uZXdzLzIiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1753432033),
 ('8GlPLx3hdOZHE7NZskD0Wj1dyI1yep5B7XzXWZt0', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidDIzbjl2U3VGVWRrVjBUMWV1VVpXR2ZqT0RDbWFEaGhCVWVseUtLUiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9uZXdzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1753428760),
+('8IEjgr49B4ZQSQyMvSFLhQMK95NTCVCkoW5zG9Jw', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:142.0) Gecko/20100101 Firefox/142.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiVUVucEd5VTVtRGZhSGhzcEx1MVRsTjlmaDJhYzhnTEEwbUhjYzNHcSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1753772121),
 ('a1N6JOaFqQOrVzzeBgWuZtaZ6FgfCohnRadJP8jP', NULL, '127.0.0.1', 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1 Edg/138.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiaW1xZVJEQXgyNE1sblBldjBFYkdIbzFIZGRRR3hmcHVqdktDM1dGayI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9uZXdzLzIiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1753447176),
 ('AIfMGjx7S8YIvxxvmgKB0q6S338yoO0uSgJhZmV5', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiZ2MwUGkzODUyRURQRHFCcjQ4ZEFPZ2JwN3VlWEhtSHgxUzdjeXpkSCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9uZXdzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1753429605),
 ('CBfiJufv42m9QDox7pPivkTijLDjgprIUP8NMQLw', NULL, '127.0.0.1', 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1 Edg/138.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUVE0TklBNnZFWmNndWlZQUlpVmhuWHJlanJRc3pkNFltQTVwSlBGQyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9uZXdzLzQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1753433593),
@@ -249,6 +260,7 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 ('p3jNRNdU256dQdIvP05jrbRX819sXVxlDeAPEffI', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNklPUWN0Z2c1OFM5b09TT2xEb2VWNHhRQlZuNjlQMzRPWWxFN1pQTyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9uZXdzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1753429892),
 ('PPYnXrAROKRqAZzRWGZZ0NkSnjd1TUyxY00UOnRo', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiaEhacmJDeklYNXJQSDNEdTZ4ZUQ3RzFjWG9wSHVldTFnRHFSVVFzWSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9uZXdzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1753429852),
 ('qGfybk3fji53erT7OH7ykPDgQWdQknodJklBZ8PS', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUjliaHluYmF2QUlKYTlGaTFMbUFvRnNIaHpIUklVbExLdWNxZjJkYyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9uZXdzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1753428742),
+('QNRp5Ehk26OXpU5zKfvij4MumFcmXBCS3sasdjBj', NULL, '127.0.0.1', 'Mozilla/5.0 (Linux; Android 11; SAMSUNG SM-G973U) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/14.2 Chrome/87.0.4280.141 Mobile Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidm1SZGgyalV1ZW9vd3E1bGdrRURJejR2T2N0NzQ4M0tZaDFJdDVHbiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9uZXdzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1753773202),
 ('r91m3fhZmDO8eW6FS6uWEBww7qekYNig1OHWvKDn', NULL, '127.0.0.1', 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1 Edg/138.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoicnNjMWExR1A3cVFMcDNFMDBmR25xV0h1V1NvOHRQWEY2UDZrQ2ZnRCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9uZXdzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1753432071),
 ('sap9sksROHgW9IVUxBsjskMz52JIJuHxnnxN1H8U', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidFpUU3BZNThtOVNseUZpVXkxa0k1WFcyRW91c3F5dkF6MllZbUxyaiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9uZXdzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1753429790),
 ('sFCkLiWfCjXzF2sRN4harwGxpmS8VdPfbruMNA9x', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoibW9aOVZLdXBRaVpXWENDcDRRMnlGRnFwOVQ0akFMbDlYeTBJTFlaVyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9uZXdzIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1753429893),
@@ -376,7 +388,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `contactforms`
 --
 ALTER TABLE `contactforms`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
