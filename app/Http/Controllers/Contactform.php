@@ -47,7 +47,7 @@ class Contactform extends Model
         $contactform->subject = $input['subject'];
         $contactform->message = $input['message'];
         $contactform->save();
-        $contactform = Contactform::create($input);
+      //  $contactform = Contactform::create($input);
 
         //return Response()->json(['message' => 'Contact form info submitted successfully!'], 200);
          return Response([
@@ -55,7 +55,7 @@ class Contactform extends Model
              'data' => $contactform,
         ]);
 
-    // return response()->json(['success' => 'Contact form submitted successfully!']);
+     return response()->json(['success' => 'Contact form submitted successfully!']);
     }
 
     /**

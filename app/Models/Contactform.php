@@ -15,11 +15,4 @@ class Contactform extends Model
         'subject',
         'message',
     ];
-// //insert:
-// Contactform::create([
-//     'name' => 'Nicholus',
-//     'email' => 'nicolasmahlangu75@gmail.com',
-//     'subject' => 'I want to inquire',
-//     'message' => 'Monyama',
-// ]);
 }
