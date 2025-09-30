@@ -6,11 +6,13 @@ use App\Http\Controllers\Contactform;
 use App\Http\Controllers\UserLogController;
 use App\Http\Controllers\NewsController;
 
+use App\Http\Controllers\AdminAuthController;
 // Route::get('/user', function (Request $request) {
 //      return $request->user();
 // })->middleware('auth:sanctum');
 
 Route::post('contactform/add', [Contactform::class, 'store']);
+Route::post('admin/login', [AdminAuthController::class, 'login']);
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
