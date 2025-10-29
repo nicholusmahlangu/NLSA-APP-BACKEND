@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Contactform;
 use App\Http\Controllers\UserLogController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ContactController;
 
 use App\Http\Controllers\AdminAuthController;
 // Route::get('/user', function (Request $request) {
@@ -33,3 +34,4 @@ Route::get('/news/{id}', [NewsController::class, 'show']);
 
 //delete news by ID
 Route::delete('/newsdestroy/{id}', [NewsController::class, 'destroy']);
+Route::post('/contact', [ContactController::class, 'sendEmail']);
