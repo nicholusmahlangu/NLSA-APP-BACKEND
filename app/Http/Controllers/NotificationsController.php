@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\News;
-use App\Models\Notifications;
 use Illuminate\Http\Request;
+use App\Models\Notifications;
 
-class NewsController extends Controller
+
+class NotificationsController extends Controller
 {
-    public function index()
+
+     public function index()
     {
-        $news = \App\Models\News::orderBy('created_at', 'desc')->get();
-    return response()->json($news);
+        $notifications = \App\Models\Notifications::orderBy('created_at', 'desc')->get();
+    return response()->json($notifications);
 }
 
 public function show($id)
 {
-    return News::findOrFail($id);
+    return Notifications::findOrFail($id);
 }
 
 public function store(Request $request)
@@ -25,8 +26,7 @@ public function store(Request $request)
         $request->validate([
             'Title'       => 'required|string|max:255',
             'Description' => 'required|string',
-            'Image'       => 'nullable|file|image|max:2048', // if storing just URL/filename
-            'Story'       => 'required|string',
+            'Image'       => 'nullable|file|image|max:2048', 
         ]);
 
         // Handle file upload
@@ -38,13 +38,6 @@ public function store(Request $request)
     }
 
         // Create and save news
-        $news = News::create([
-            'Title'       => $request->Title,
-            'Description' => $request->Description,
-            'Image'       => $imageName,
-            'Story'       => $request->Story,
-        ]);
-
         $notifications = Notifications::create([
             'Title'       => $request->Title,
             'Description' => $request->Description,
@@ -52,18 +45,20 @@ public function store(Request $request)
         ]);
 
         return response()->json([
-            'message' => 'News created successfully!',
-            'data'    => $news
+            'message' => 'Notification created successfully!',
+            'data'    => $notifications
         ], 201);
     
     }
 
     public static function destroy($id)
     {
-       $news = News::findOrFail($id);
-        $news->delete();
+       $notifications = Notifications::findOrFail($id);
+        $notifications->delete();
 
         return response()->json(['message' => 'News deleted successfully!']);
     }
 
 }
+
+
