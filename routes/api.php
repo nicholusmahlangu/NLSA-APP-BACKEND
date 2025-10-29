@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Contactform;
 use App\Http\Controllers\UserLogController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\NotificationsController;
+use App\Http\Controllers\HomeImageController;
 
 use App\Http\Controllers\AdminAuthController;
 // Route::get('/user', function (Request $request) {
@@ -33,3 +35,16 @@ Route::get('/news/{id}', [NewsController::class, 'show']);
 
 //delete news by ID
 Route::delete('/newsdestroy/{id}', [NewsController::class, 'destroy']);
+
+//store news
+Route::post('/notificationsstore', [NotificationsController::class, 'store']);
+
+Route::middleware(\Illuminate\Http\Middleware\HandleCors::class)->group(function () {
+    Route::get('/notificationget', [NotificationsController::class, 'index']);
+});
+
+Route::post('/Imagestore', [HomeImageController::class, 'store']);
+
+Route::middleware(\Illuminate\Http\Middleware\HandleCors::class)->group(function () {
+    Route::get('/Image', [HomeImageController::class, 'index']);
+});
