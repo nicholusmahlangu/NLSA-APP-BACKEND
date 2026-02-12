@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class contactMail extends Mailable
+class ContactformMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -27,7 +27,7 @@ class contactMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Contact Mail',
+            subject: 'Contactform Mail',
         );
     }
 
@@ -41,6 +41,14 @@ class contactMail extends Mailable
         );
     }
 
+    public function build()
+    {
+        return $this->from('nicholus.mahlangu@nlsa.ac.za')
+        ->to('nicolasmahlangu75@gmail.com')
+        ->subject('Contact Form Submission')
+        ->view('emails.contactform');
+
+    }
     /**
      * Get the attachments for the message.
      *

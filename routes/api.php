@@ -9,6 +9,11 @@ use App\Http\Controllers\NotificationsController;
 use App\Http\Controllers\HomeImageController;
 
 use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\contacFormtController;
+use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\mailGenerator;
+
 // Route::get('/user', function (Request $request) {
 //      return $request->user();
 // })->middleware('auth:sanctum');
@@ -47,4 +52,15 @@ Route::post('/Imagestore', [HomeImageController::class, 'store']);
 
 Route::middleware(\Illuminate\Http\Middleware\HandleCors::class)->group(function () {
     Route::get('/Image', [HomeImageController::class, 'index']);
+});
+
+Route::get('/send-email', function(){
+    $name = "NLSA Mobile App";
+    $email = "nicholus.mahlangu@nlsa.ac.za";
+    Mail::to('nicolasmahlangu75@gmail.com')->send(new mailGenerator($name, $email));
+});
+
+Route::get('/', function () {
+    \illuminate\Support\Facades\Mail::send(new \App\Mail\ContactformMail());    
+    return view('welcome');
 });
